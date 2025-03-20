@@ -33,13 +33,13 @@ export default function App() {
         src:portfolio,
         tools:['React','Tailwind','Three'],
         link: "#",
-        github:"https://github.com/faresadda/portfolio"
+        github:"https://github.com/faresadda/portfolio/tree/master"
     },
     {
         id: 2,
         name: "E-Commerce App",
         description: "A fully functional e-commerce application with a modern UI.",
-        details: "This application provides a seamless online shopping experience, featuring product listings, a shopping cart, checkout functionality, and payment gateway integration. Built with React and Firebase, it offers a fast and user-friendly experience.",
+        details: "This application provides a seamless online shopping experience, featuring product listings, a shopping cart, checkout functionality, and payment gateway integration. Built with React, it offers a fast and user-friendly experience.",
         icon: <FaShoppingCart className="text-green-500 text-4xl" />, 
         src:ushop,
         tools:['React','Tailwind'],
