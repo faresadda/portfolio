@@ -113,7 +113,7 @@ export default function Content({ setIndex,setIndexskill,setIndexservice,home,ab
           <Link
             to="/about"
             className="bg-gray-900 w-50 text-white p-4 rounded-2xl mt-6! flex justify-center mx-auto"
-            onClick={()=>{dispatch({type:'about'})}}
+            onClick={()=>{dispatch({type:'about'});scrollTo({top:0,behavior:'smooth'})}}
           >
             MORE
           </Link>
@@ -149,7 +149,7 @@ export default function Content({ setIndex,setIndexskill,setIndexservice,home,ab
         <Link
           to="/skills"
           className="bg-gray-900 w-50 text-white p-4 rounded-2xl justify-center flex mx-auto"
-          onClick={()=>{dispatch({type:'skills'})}}
+          onClick={()=>{dispatch({type:'skills'});scrollTo({top:0,behavior:'smooth'})}}
         >
           MORE
         </Link>
@@ -186,7 +186,7 @@ export default function Content({ setIndex,setIndexskill,setIndexservice,home,ab
           <Link
             to="/services"
             className="bg-gray-900 w-50 text-white p-4 rounded-2xl mt-6 text-center"
-            onClick={()=>{dispatch({type:'services'})}}
+            onClick={()=>{dispatch({type:'services'});scrollTo({top:0,behavior:'smooth'})}}
           >
             MORE
           </Link>
