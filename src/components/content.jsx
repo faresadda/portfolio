@@ -63,7 +63,7 @@ export default function Content({ setIndex,setIndexskill,setIndexservice,home,ab
       <section className="bg-gray-900 text-white shadow-2xl min-h-screen pt-60" ref={home}>
         <div className="ml-40 name">
           <img src={name} className="w-96" loading="lazy"/>
-          <div className="flex items-center gap-10 mt-10 ml-10 w-fit">
+          <div className="flex items-center gap-10 mt-10 ml-10 w-fit" onClick={()=>{about.current.scrollIntoView({behavior:"smooth"})}}>
             <button className="bg-gray-100 py-5 w-50 font-extrabold rounded-3xl z-20 text-gray-900 relative text-xl shadow-gray-900 shadow-2xs">
               {tap}
             </button>

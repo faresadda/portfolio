@@ -44,7 +44,7 @@ export default function Footer({ home,about,skills,services,projects,contact }) 
   };
   return (
     <footer
-      className={`bg-gray-900 text-white p-16 ${
+      className={`bg-gray-900 text-white p-16 max-[416px]:px-5 ${
         (work || page !== null) && "blur-xs"
       }`}
       ref={contact}
@@ -54,7 +54,7 @@ export default function Footer({ home,about,skills,services,projects,contact }) 
         <div>
           <div className="flex items-center justify-center gap-4">
             <img src={comment} className="w-10" />
-            <h3 className="text-3xl font-bold text-center">Leave a comment</h3>
+            <h3 className="text-[1.8rem] font-bold text-center">Leave a comment</h3>
           </div>
           <p className="text-gray-400 text-sm my-2 text-center">
             For more iformations contact us.

@@ -7,7 +7,7 @@ import { useContext } from "react";
 export default function Work(){
     const { work, setWork,page,setPage } = useContext(Blurcontext);
     return(
-        <section className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-100 h-100 z-50 
+        <section className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-100 max-[442px]:w-[90%] h-100 z-50 
         flex flex-col justify-center items-center gap-3 text-xl rounded-2xl">
             <IoClose className="absolute top-4 right-5 text-4xl" onClick={()=>{setWork(false)}}/>
             <img src={airplane} className="w-30" loading="lazy"/>

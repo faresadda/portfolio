@@ -12,7 +12,7 @@ export default function Navbar({projects,contact,dispatch,list}){
         <section className={`flex w-full justify-between items-center fixed p-8 z-50 ${(work || page!==null) && 'blur-xs'} ${menu ? 'bg-none' : 'bg-gray-100 transition-colors delay-1000'}`}>
             <img src={blacklogo} className={`w-15 ${menu ? 'opacity-0' : 'opacity-100 transition-opacity delay-1000'}`} loading='lazy'/>
             <ul className={`list flex justify-between w-[60%] font-[500] items-center transition-[right] duration-1000 
-                ${menu ? 'right-0' : 'right-[-200%]'} max-[900px]:w-[400px] max-[500px]:w-[90%]`}>
+                ${menu ? 'right-0' : 'right-[-200%]'} max-[900px]:w-[400px] max-[550px]:w-[75%] z-50`}>
                 <Link to='/' onClick={()=>{scrollTo({top:0,behavior:'smooth'});dispatch({type:'home'});setMenu(false)}} 
                 className={`px-4 py-3 rounded-2xl ${list.name==='home' && 'bg-yellow-300'}`}>HOME</Link>
                 <Link onClick={()=>{scrollTo({top:0,behavior:'smooth'});dispatch({type:'about'});setMenu(false)}} to="/about" className={`p-3 rounded-2xl ${list.name==='about' && 'bg-yellow-300 text-gray-900'}`}>ABOUT</Link>
