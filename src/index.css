@@ -47,7 +47,7 @@ body{
 @media (max-width:900px){
    .list{flex-direction: column;
     position: absolute;
-    background-color: white;
+    background-color: #f3f4f6;
     top: 0;
     padding: 50px;
     height:100vh;

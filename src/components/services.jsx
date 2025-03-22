@@ -4,9 +4,9 @@ import { useContext } from "react";
 import { Context,Blurcontext } from "../main";
 export default function Services() {
   const {projectsList,skillsList,servicesList}=useContext(Context)
-  const { work, setWork,page,setPage } = useContext(Blurcontext);
+  const { work, setWork,pageexist,setPageexist } = useContext(Blurcontext);
   return (
-    <section className={`z-10 relative px-20 pt-50 flex flex-col justify-center min-h-screen py-20 bg-gray-50 max-[500px]:px-8 ${(work || page!==null) && 'blur-xs'}`}>
+    <section className={`z-10 relative px-20 pt-50 flex flex-col justify-center min-h-screen py-20 bg-gray-50 max-[500px]:px-8 ${(work || pageexist!==null) && 'blur-xs'}`}>
               <div className="flex items-center justify-center gap-6 mb-6">
                 <h2 className="text-4xl font-extrabold text-gray-800 tracking-wide">SERVICES</h2>
                 <img src={title} className="title left-[200px]!" loading="lazy"/>

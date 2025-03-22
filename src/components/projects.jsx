@@ -6,9 +6,9 @@ import { IoEyeSharp } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 export default function Projects({ index }) {
   const { projectsList, skillsList, servicesList } = useContext(Context);
-  const { work, setWork,page,setPage } = useContext(Blurcontext);
+  const { work, setWork,pageexist,setPageexist } = useContext(Blurcontext);
   return (
-    <section className={`z-10 bg-gray-50 relative p-20 pt-50 min-h-screen flex flex-col justify-center max-[700px]:px-8 ${(work || page!==null) && "blur-xs"}`}>
+    <section className={`z-10 bg-gray-50 relative p-20 pt-50 min-h-screen flex flex-col justify-center max-[700px]:px-8 ${(work || pageexist!==null) && "blur-xs"}`}>
       <div className="bg-gray-100 p-10 rounded-xl shadow-md flex flex-col justify-center items-center gap-5">
         <div className="flex items-center gap-2">
           <img src={mark} className="w-7" loading="lazy"/>

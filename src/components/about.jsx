@@ -4,10 +4,10 @@ import pin from "../../public/pin.png"
 import mark from "../../public/mark.png"
 import { Blurcontext } from "../main";
 const About = ({ about }) => {
-  const { work, setWork,page,setPage } = useContext(Blurcontext);
+  const { work, setWork,pageexist,setPageexist } = useContext(Blurcontext);
   return (
     <section
-      className={`bg-gray-50 p-20 relative min-h-screen flex flex-col justify-center pt-50 max-[850px]:px-8 ${(work || page!==null) && "blur-xs"}`}
+      className={`bg-gray-50 p-20 relative min-h-screen flex flex-col justify-center pt-50 max-[850px]:px-8 ${(work || pageexist!==null) && "blur-xs"}`}
       ref={about}
     >
       <div className="z-10 relative">

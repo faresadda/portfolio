@@ -6,10 +6,10 @@ import { useState,useEffect,useReducer,useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import {Blurcontext} from "../main"
 export default function Navbar({projects,contact,dispatch,list}){
-    const { work, setWork,page,setPage } = useContext(Blurcontext);
+    const { work, setWork,pageexist,setPageexist } = useContext(Blurcontext);
     const [menu,setMenu]=useState(false)
     return(
-        <section className={`flex w-full justify-between items-center fixed p-8 z-50 ${(work || page!==null) && 'blur-xs'} ${menu ? 'bg-none' : 'bg-gray-100 transition-colors delay-1000'}`}>
+        <section className={`flex w-full justify-between items-center fixed p-8 z-50 ${(work || pageexist!==null) && 'blur-xs'} ${menu ? 'bg-none' : 'bg-gray-100 transition-colors delay-1000'}`}>
             <img src={blacklogo} className={`w-15 ${menu ? 'opacity-0' : 'opacity-100 transition-opacity delay-1000'}`} loading='lazy'/>
             <ul className={`list flex justify-between w-[60%] font-[500] items-center transition-[right] duration-1000 
                 ${menu ? 'right-0' : 'right-[-200%]'} max-[900px]:w-[400px] max-[550px]:w-[75%] z-50`}>

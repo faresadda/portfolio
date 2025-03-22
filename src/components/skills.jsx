@@ -4,11 +4,11 @@ import { Context, Blurcontext } from "../main";
 import mark from "../../public/mark.png"
 export default function Skills() {
   const { projectsList, skillsList, servicesList } = useContext(Context);
-  const { work, setWork,page,setPage } = useContext(Blurcontext);
+  const { work, setWork,pageexist,setPageexist } = useContext(Blurcontext);
 
   return (
     <section
-      className={`bg-gray-50 p-20 pt-50  flex flex-col justify-center min-h-screen max-[500px]:px-8 ${(work || page!==null) && "blur-xs"}`}>
+      className={`bg-gray-50 p-20 pt-50  flex flex-col justify-center min-h-screen max-[500px]:px-8 ${(work || pageexist!==null) && "blur-xs"}`}>
       <div className="flex items-center justify-center gap-6 mb-16">
         <h2 className="text-4xl font-extrabold text-gray-800 tracking-wide">
           SKILLS

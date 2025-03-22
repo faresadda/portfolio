@@ -15,7 +15,7 @@ import emailjs from "emailjs-com";
 import comment from "../../public/comment.png"
 
 export default function Footer({ home,about,skills,services,projects,contact }) {
-  const { work, setWork, page, setPage } = useContext(Blurcontext);
+  const { work, setWork, pageexist, setPageexist } = useContext(Blurcontext);
   const [name,setName]=useState('');
   const [email,setEmail]=useState('');
   const [message,setMessage]=useState('');
@@ -45,7 +45,7 @@ export default function Footer({ home,about,skills,services,projects,contact }) 
   return (
     <footer
       className={`bg-gray-900 text-white p-16 max-[416px]:px-5 ${
-        (work || page !== null) && "blur-xs"
+        (work || pageexist !== null) && "blur-xs"
       }`}
       ref={contact}
     >
@@ -104,7 +104,7 @@ export default function Footer({ home,about,skills,services,projects,contact }) 
           <ul className="space-y-3 text-sm text-gray-400">
             <li><a className="flex items-center gap-2" href="https://maps.app.goo.gl/yrrucr9uNBRrrTzMA" target="_blank"><FaMapMarkerAlt /> Boumerdes, Algeria</a></li>
             <li><a className="flex items-center gap-2" href="tel:+213560869608"><FaPhone /> (+213) 560-869-608</a></li>
-            <li><a className="flex items-center gap-2" href="mailto:faresaddadev@gmail.com"><FaEnvelope /> faresaddadev@gmail.com</a></li>
+            <li><a className="flex items-center gap-2" href="mailto:faresaddadev@gmail.com"><FaEnvelope /> faresadda2001@gmail.com</a></li>
           </ul>
           {/* 🌍 Social Media Icons */}
           <ul className="flex gap-4 mt-4">

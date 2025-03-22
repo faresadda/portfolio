@@ -149,7 +149,7 @@ export default function App() {
   const contact=useRef(null)
   const [index,setIndex]=useState(0)
   const [work,setWork]=useState(false)
-  const [page,setPage]=useState(null)
+  const [pageexist,setPageexist]=useState(null)
   const [indexskill,setIndexskill]=useState(null)
   const [indexservice,setIndexservice]=useState(null)
 
@@ -170,9 +170,15 @@ export default function App() {
             case 'contact' : {return {name:'contact'}}
         }
     }
+    const [arrow, setArrow] = useState(window.scrollY>500);
+    window.onscroll=()=>{
+      setArrow(window.scrollY>500)
+    }
+    
+    
   return (
     <Context.Provider value={{projectsList,skillsList,servicesList}}>
-      <Blurcontext.Provider value={{work,setWork,page,setPage}}>
+      <Blurcontext.Provider value={{work,setWork,pageexist,setPageexist}}>
       <BrowserRouter>
         
         <Routes>
@@ -183,10 +189,11 @@ export default function App() {
                 <Navbar contact={contact} projects={projects} dispatch={dispatch} list={list}/>
                 <Outlet />
                 <Footer home={home} about={about} skills={skills} services={services} projects={projects} contact={contact}/>
-                <img src={up} className={`fixed bottom-5 right-5 p-2 rounded-full box-content bg-white text-2xl w-[2rem] z-40 
-                  ${work && 'blur-xs'}`} onClick={()=>{scrollTo({top:0,behavior:'smooth'})}} loading="lazy"/>
+                {arrow && <img src={up} className={`fixed bottom-5 right-5 p-2 rounded-full box-content bg-white text-2xl w-[2rem] z-40 
+                  ${(work||pageexist) && 'blur-xs'}`} onClick={()=>{scrollTo({top:0,behavior:'smooth'})}} loading="lazy"/>}
+
                 {work && <Work setWrok={setWork}/>}
-                {page!==null && <Page indexservice={indexservice} indexskill={indexskill}/>}
+                {pageexist!==null && <Page indexservice={indexservice} indexskill={indexskill}/>}
                 
               </>
             }

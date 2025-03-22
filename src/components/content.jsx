@@ -10,7 +10,7 @@ import airplane from "../../public/airplane.png"
 
 export default function Content({ setIndex,setIndexskill,setIndexservice,home,about,skills,services,projects,dispatch }) {
   const { projectsList, skillsList, servicesList } = useContext(Context);
-  const { work, setWork,page,setPage } = useContext(Blurcontext);
+  const { work, setWork,pageexist,setPageexist} = useContext(Blurcontext);
   const newdate = new Date().getTime()
   const olddate = new Date("2024-12-07T00:00:00Z").getTime()
   const def = ( newdate - olddate ) / ( 1000 * 60 * 60 * 24 * 30 )
@@ -58,11 +58,11 @@ export default function Content({ setIndex,setIndexskill,setIndexservice,home,ab
       };
     }, []);
   return (
-    <div className={`bg-gray-50 ${(work || page!==null) && "blur-xs"}`}>
+    <div className={`bg-gray-50 ${(work || pageexist!==null) && "blur-xs"}`}>
       {/* Home */}
-      <section className="bg-gray-900 text-white shadow-2xl min-h-screen pt-60" ref={home}>
+      <section className="bg-gray-900 text-white shadow-2xl h-screen pt-60" ref={home}>
         <div className="ml-40 name">
-          <img src={name} className="w-96" loading="lazy"/>
+          <img src={name} className="max-w-80" loading="lazy"/>
           <div className="flex items-center gap-10 mt-10 ml-10 w-fit" onClick={()=>{about.current.scrollIntoView({behavior:"smooth"})}}>
             <button className="bg-gray-100 py-5 w-50 font-extrabold rounded-3xl z-20 text-gray-900 relative text-xl shadow-gray-900 shadow-2xs">
               {tap}
@@ -136,7 +136,7 @@ export default function Content({ setIndex,setIndexskill,setIndexservice,home,ab
             <div
               key={skill.id}
               className="flex flex-col items-center gap-2 bg-gray-100 p-4 rounded-lg shadow-lg hover:shadow-xl hover:scale-110 hover:duration-400 transition-all"
-              onClick={()=>{setPage('skills');setIndexskill(index)}}
+              onClick={()=>{setPageexist('skills');setIndexskill(index)}}
             >
               <span className="skill text-4xl">{skill.icon}</span>
               <strong className="text-lg mt-2">{skill.name}</strong>
@@ -170,7 +170,7 @@ export default function Content({ setIndex,setIndexskill,setIndexservice,home,ab
             <div
               key={service.id}
               className="bg-gray-100 p-6 rounded-2xl shadow-lg flex flex-col items-center hover:scale-110 hover:duration-400"
-              onClick={()=>{setPage('services');setIndexservice(index)}}
+              onClick={()=>{setPageexist('services');setIndexservice(index)}}
             >
               {service.icon}
               <h3 className="text-xl font-semibold text-gray-700 mt-4 text-center">
