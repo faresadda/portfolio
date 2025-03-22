@@ -35,7 +35,7 @@ export default function Page({indexskill,indexservice}) {
 
 
         {pageexist==='services' && <div className="flex flex-col items-center justify-center">
-            <div className="flex items-center justify-center bg-amber-600 gap-2 mb-5">
+            <div className="flex items-center justify-center gap-2 mb-5">
               <img src={mark} className="w-7" loading="lazy" />
               <h3 className="text-xl font-semibold">{servicesList[indexservice].title}</h3>
             </div>
