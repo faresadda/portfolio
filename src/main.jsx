@@ -12,11 +12,9 @@ import Services from "./components/services";
 import Work from "./components/work";
 import up from "../public/up.png";
 import { useState,useRef,useEffect,useContext,createContext,useReducer } from "react"
-import { FaCode, FaMobileAlt, FaPaintBrush, FaServer, FaBolt, FaBug, FaShoppingCart, FaComments, FaGlobe } from "react-icons/fa";
-import { SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiReact, SiGit, SiGithub, SiC, SiSqlite, SiPython } from "react-icons/si";
-import portfolio from "../public/portfolio.png"
-import ushop from "../public/ushop.png"
-import chatfai from "../public/chatfai.png"
+import { FaCode, FaMobileAlt, FaPaintBrush, FaServer, FaBolt, FaBug, FaShoppingCart, FaComments, FaGlobe,FaDatabase, FaVideo } from "react-icons/fa";
+import { SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiReact, SiGit, SiGithub, SiC, SiPython,SiNodedotjs, SiExpress, SiMongodb } from "react-icons/si";
+
 import Page from "./components/page";
 
 
@@ -30,8 +28,8 @@ export default function App() {
         description: "A personal portfolio built with React and Tailwind CSS.",
         details: "This project showcases a developer's skills, projects, and contact information with a sleek and modern UI design. It includes sections for about, skills, portfolio, and contact, providing a professional online presence.",
         icon: <FaGlobe className="text-blue-500 text-4xl" />, 
-        src:portfolio,
-        tools:['React','Tailwind','Three'],
+        src:"../public/portfolio.png",
+        tools:[<SiReact color="#61DAFB" />,<SiTailwindcss color="#38B2AC" />],
         link: "#",
         github:"https://github.com/faresadda/portfolio/tree/master"
     },
@@ -41,8 +39,8 @@ export default function App() {
         description: "A fully functional e-commerce application with a modern UI.",
         details: "This application provides a seamless online shopping experience, featuring product listings, a shopping cart, checkout functionality, and payment gateway integration. Built with React, it offers a fast and user-friendly experience.",
         icon: <FaShoppingCart className="text-green-500 text-4xl" />, 
-        src:ushop,
-        tools:['React','Tailwind'],
+        src:"../public/ushop.PNG",
+        tools:[<SiReact color="#61DAFB" />,<SiTailwindcss color="#38B2AC" />],
         link: "https://ushopstore.netlify.app/",
         github:"https://github.com/faresadda/ushop/tree/master"
     },
@@ -52,15 +50,15 @@ export default function App() {
         description: "A chat bot built with API",
         details: "This chatbot is built with AI capabilities to assist users in real-time conversations. It includes NLP processing, user-friendly chat interfaces, and API integration for enhanced responsiveness and contextual awareness.",
         icon: <FaComments className="text-purple-500 text-4xl" />, 
-        src:chatfai,
-        tools:['React','Tailwind','API'],
-        link: "https://chatfai.netlify.app/",
+        src:"../public/chatfai.PNG",
+        tools:[<SiReact color="#61DAFB" />,<SiTailwindcss color="#38B2AC" />,<SiNodedotjs color="#339933" />,<SiMongodb color="#47A248" />],
+        link: "https://chatfai.onrender.com/",
         github:"https://github.com/faresadda/chatfai/tree/master"
     },
   ];
 
   const skillsList = [
-  { id: 1, name: "HTML", icon: <SiHtml5 color="#E34F26" />, proficiency: 95, 
+  { id: 1, name: "HTML", icon: <SiHtml5 color="#E34F26" />, proficiency: 90, 
     description: "Markup language for structuring web content.", 
     detail: "HTML (HyperText Markup Language) is the backbone of web pages, used to structure elements like text, images, and links." },
   
@@ -68,37 +66,54 @@ export default function App() {
     description: "Stylesheet language for designing and styling web pages.", 
     detail: "CSS (Cascading Style Sheets) is used to control layout, colors, fonts, and responsiveness of web pages." },
 
-  { id: 3, name: "JavaScript", icon: <SiJavascript color="#F7DF1E" />, proficiency: 85, 
+  { id: 3, name: "JavaScript", icon: <SiJavascript color="#F7DF1E" />, proficiency: 80, 
     description: "Dynamic programming language for interactive web development.", 
     detail: "JavaScript enables interactive elements, such as animations, event handling, and API integrations on websites." },
 
-  { id: 4, name: "Tailwind CSS", icon: <SiTailwindcss color="#38B2AC" />, proficiency: 80, 
+  { id: 4, name: "Tailwind CSS", icon: <SiTailwindcss color="#38B2AC" />, proficiency: 90, 
     description: "Utility-first CSS framework for rapid UI development.", 
     detail: "Tailwind CSS allows developers to style elements quickly using utility classes, making UI design faster and more flexible." },
 
-  { id: 5, name: "React.js", icon: <SiReact color="#61DAFB" />, proficiency: 85, 
+  { id: 5, name: "React JS", icon: <SiReact color="#61DAFB" />, proficiency: 80, 
     description: "JavaScript library for building user interfaces with reusable components.", 
     detail: "React is a powerful library for creating interactive and modular UI components, using a virtual DOM for efficient updates." },
 
-  { id: 6, name: "Git", icon: <SiGit color="#F05032" />, proficiency: 75, 
+  { id: 6, name: "Node JS", icon: <SiNodedotjs color="#339933" />, proficiency: 70, 
+      description: "JavaScript runtime for building fast and scalable server-side applications.", 
+      detail: "Node.js uses an event-driven, non-blocking I/O model, making it efficient for building APIs and real-time applications." },
+  
+  { id: 7, name: "Express JS", icon: <SiExpress color="#000000" />, proficiency: 80, 
+      description: "Minimal and flexible Node.js web application framework.", 
+      detail: "Express simplifies backend development by providing a robust set of features for web and mobile applications." },
+  
+  { id: 8, name: "MongoDB", icon: <SiMongodb color="#47A248" />, proficiency: 90, 
+      description: "NoSQL database for storing flexible, JSON-like documents.", 
+      detail: "MongoDB is a document-oriented database designed for scalability and ease of development, ideal for modern applications." },
+
+  { id: 9, name: "Git", icon: <SiGit color="#F05032" />, proficiency: 60, 
     description: "Version control system for tracking code changes.", 
     detail: "Git is essential for managing code versions, allowing developers to collaborate efficiently and track project history." },
 
-  { id: 7, name: "GitHub", icon: <SiGithub color="#181717" />, proficiency: 80, 
+  { id: 10, name: "GitHub", icon: <SiGithub color="#181717" />, proficiency: 80, 
     description: "Platform for hosting and collaborating on Git repositories.", 
     detail: "GitHub provides cloud-based Git repository hosting, with features like issue tracking, pull requests, and CI/CD integration." },
 
-  { id: 8, name: "C", icon: <SiC color="#A8B9CC" />, proficiency: 70, 
+  { id: 11, name: "C", icon: <SiC color="#A8B9CC" />, proficiency: 60, 
     description: "Low-level language used for system and application development.", 
     detail: "C is a foundational programming language used in system programming, embedded systems, and performance-critical applications." },
 
-  { id: 9, name: "SQL", icon: <SiSqlite color="#003B57" />, proficiency: 75, 
+  { id: 12, name: "Python", icon: <SiPython color="#3776AB" />, proficiency: 60, 
+      description: "Versatile programming language used in AI, web, and data science.", 
+      detail: "Python is widely used for AI, machine learning, automation, and backend web development due to its simplicity and flexibility." },
+
+  { id: 13, name: "SQL", icon: <FaDatabase color="#003B57" />, proficiency: 60, 
     description: "Language for managing and querying relational databases.", 
     detail: "SQL is used to interact with relational databases, enabling data retrieval, manipulation, and management." },
 
-  { id: 10, name: "Python", icon: <SiPython color="#3776AB" />, proficiency: 80, 
-    description: "Versatile programming language used in AI, web, and data science.", 
-    detail: "Python is widely used for AI, machine learning, automation, and backend web development due to its simplicity and flexibility." }
+  { id: 14, name: "CapCut", icon: <FaVideo color="#4A90E2" />, proficiency: 75, 
+      description: "Video editing software for creating professional-grade content.", 
+      detail: "CapCut is a powerful mobile video editing tool that allows users to create high-quality videos with ease. It offers a wide range of features such as transitions, effects, text overlays, and music integration, making it ideal for both beginner and advanced video editors." }
+
   ];
 
   const servicesList= [
@@ -114,7 +129,7 @@ export default function App() {
           title: "Responsive Web Design", 
           description: "Ensuring compatibility across all devices.", 
           details: "Our responsive web design service ensures that your website looks and functions flawlessly across all screen sizes, including desktops, tablets, and mobile phones. We utilize CSS Grid, Flexbox, and media queries to create fluid layouts that adapt seamlessly to different resolutions. Additionally, we focus on optimizing touch gestures, navigation structures, and accessibility features to enhance the user experience for all visitors.", 
-          icon: <FaMobileAlt className="text-green-500 text-4xl" /> 
+          icon: <FaMobileAlt className="text-black text-4xl" /> 
       },
       { 
           id: 3, 
@@ -144,6 +159,20 @@ export default function App() {
           details: "Our testing and debugging services guarantee that your web applications run smoothly and remain bug-free. We use automated testing tools such as Jest, Cypress, and Selenium for unit, integration, and end-to-end testing. Additionally, we conduct manual testing to identify usability issues and ensure cross-browser compatibility. Our debugging process involves analyzing performance issues, fixing logical errors, and improving code efficiency to maintain stability and reliability.", 
           icon: <FaBug className="text-gray-500 text-4xl" /> 
       },
+      {
+        id: 7,
+        title: "Back End Development",
+        description: "Powering applications with robust server-side logic.",
+        details: "Our back-end development services focus on creating scalable and secure server-side applications using Node.js, Express, and MongoDB. We design efficient database schemas, develop RESTful APIs, implement authentication and authorization, and ensure data integrity and protection. With a focus on clean architecture and performance, our solutions support seamless front-end integration and business logic execution.",
+        icon: <FaDatabase className="text-indigo-500 text-4xl" />
+      },
+      {
+        id: 8,
+        title: "Video Editing & Montage",
+        description: "Crafting professional and engaging video content.",
+        details: "We offer high-quality video editing and montage services for social media, marketing, and presentations. Our editing process includes cutting, transitions, color correction, subtitles, sound design, and motion graphics to deliver polished and impactful videos. We work with tools like Adobe Premiere Pro and After Effects to ensure cinematic quality tailored to your brand and vision.",
+        icon: <FaVideo className="text-gray-600 text-4xl" />
+      }
   ];
   
   const contact=useRef(null)

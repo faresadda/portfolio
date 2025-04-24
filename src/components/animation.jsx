@@ -1,96 +1,512 @@
-import { useLayoutEffect, useEffect, useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { useMask, useGLTF, useAnimations, Float, Instance, Instances, CameraControls } from '@react-three/drei'
-import { Lightformer, Environment, RandomizedLight, AccumulativeShadows, MeshTransmissionMaterial } from '@react-three/drei'
+import styled from 'styled-components';
 
-export default function An({ spheres }) {
+const Loader = () => {
   return (
-    <Canvas shadows camera={{ position: [30, 0, -3], fov: 35, near: 1, far: 50 }}>
-      <color attach="background" args={['#c6e5db']} />
-      {/** Glass aquarium */}
-      <Aquarium position={[0, 0.25, 0]}>
-        <Float rotationIntensity={2} floatIntensity={10} speed={2}>
-          <Turtle position={[0, -0.5, -1]} rotation={[0, Math.PI, 0]} scale={23} />
-        </Float>
-        <Instances renderOrder={-1000}>
-          <sphereGeometry args={[1, 64, 64]} />
-          <meshBasicMaterial depthTest={false} />
-          {spheres.map(([scale, color, speed, position], index) => (
-            <Sphere key={index} scale={scale} color={color} speed={speed} position={position} />
-          ))}
-        </Instances>
-      </Aquarium>
-      {/** Soft shadows */}
-      <AccumulativeShadows temporal frames={100} color="lightblue" colorBlend={2} opacity={0.7} scale={60} position={[0, -5, 0]}>
-        <RandomizedLight amount={8} radius={15} ambient={0.5} intensity={1} position={[-5, 10, -5]} size={20} />
-      </AccumulativeShadows>
-      {/** Custom environment map */}
-      <Environment resolution={1024}>
-        <group rotation={[-Math.PI / 3, 0, 0]}>
-          <Lightformer intensity={4} rotation-x={Math.PI / 2} position={[0, 5, -9]} scale={[10, 10, 1]} />
-          {[2, 0, 2, 0, 2, 0, 2, 0].map((x, i) => (
-            <Lightformer key={i} form="circle" intensity={4} rotation={[Math.PI / 2, 0, 0]} position={[x, 4, i * 4]} scale={[4, 1, 1]} />
-          ))}
-          <Lightformer intensity={2} rotation-y={Math.PI / 2} position={[-5, 1, -1]} scale={[50, 2, 1]} />
-          <Lightformer intensity={2} rotation-y={-Math.PI / 2} position={[10, 1, 0]} scale={[50, 2, 1]} />
-        </group>
-      </Environment>
-      <CameraControls truckSpeed={0} dollySpeed={0} minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
-    </Canvas>
-  )
+    <StyledWrapper>
+      <div className="banter-loader">
+        <div className="banter-loader__box" />
+        <div className="banter-loader__box" />
+        <div className="banter-loader__box" />
+        <div className="banter-loader__box" />
+        <div className="banter-loader__box" />
+        <div className="banter-loader__box" />
+        <div className="banter-loader__box" />
+        <div className="banter-loader__box" />
+        <div className="banter-loader__box" />
+      </div>
+    </StyledWrapper>
+  );
 }
 
-function Aquarium({ children, ...props }) {
-  const ref = useRef()
-  const { nodes } = useGLTF('/shapes-transformed.glb')
-  const stencil = useMask(1, false)
-  useLayoutEffect(() => {
-    // Apply stencil to all contents
-    ref.current.traverse((child) => child.material && Object.assign(child.material, { ...stencil }))
-  }, [])
-  return (
-    <group {...props} dispose={null}>
-      <mesh castShadow scale={[0.61 * 6, 0.8 * 6, 1 * 6]} geometry={nodes.Cube.geometry}>
-        <MeshTransmissionMaterial
-          backside
-          samples={4}
-          thickness={3}
-          chromaticAberration={0.025}
-          anisotropy={0.1}
-          distortion={0.1}
-          distortionScale={0.1}
-          temporalDistortion={0.2}
-          iridescence={1}
-          iridescenceIOR={1}
-          iridescenceThicknessRange={[0, 1400]}
-        />
-      </mesh>
-      <group ref={ref}>{children}</group>
-    </group>
-  )
-}
+const StyledWrapper = styled.div`
+  .banter-loader {
+    width: 72px;
+    height: 72px;
+  }
 
-function Sphere({ position, scale = 1, speed = 0.1, color = 'white' }) {
-  return (
-    <Float rotationIntensity={40} floatIntensity={20} speed={speed / 2}>
-      <Instance position={position} scale={scale} color={color} />
-    </Float>
-  )
-}
+  .banter-loader__box {
+    float: left;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
 
-/*
-Author: DigitalLife3D (https://sketchfab.com/DigitalLife3D)
-License: CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
-Source: https://sketchfab.com/3d-models/model-52a-kemps-ridley-sea-turtle-no-id-7aba937dfbce480fb3aca47be3a9740b
-Title: Model 52A - Kemps Ridley Sea Turtle (no ID)
-*/
-function Turtle(props) {
-  const { scene, animations } = useGLTF('/model_52a_-_kemps_ridley_sea_turtle_no_id-transformed.glb')
-  const { actions, mixer } = useAnimations(animations, scene)
-  useEffect(() => {
-    mixer.timeScale = 0.5
-    actions['Swim Cycle'].play()
-  }, [])
-  useFrame((state) => (scene.rotation.z = Math.sin(state.clock.elapsedTime / 4) / 2))
-  return <primitive object={scene} {...props} />
-}
+  .banter-loader__box:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+  }
+
+  .banter-loader__box:nth-child(3n) {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+
+  .banter-loader__box:nth-child(1):before, .banter-loader__box:nth-child(4):before {
+    margin-left: 26px;
+  }
+
+  .banter-loader__box:nth-child(3):before {
+    margin-top: 52px;
+  }
+
+  .banter-loader__box:last-child {
+    margin-bottom: 0;
+  }
+
+  @keyframes moveBox-1 {
+    9.0909090909% {
+      transform: translate(-26px, 0);
+    }
+
+    18.1818181818% {
+      transform: translate(0px, 0);
+    }
+
+    27.2727272727% {
+      transform: translate(0px, 0);
+    }
+
+    36.3636363636% {
+      transform: translate(26px, 0);
+    }
+
+    45.4545454545% {
+      transform: translate(26px, 26px);
+    }
+
+    54.5454545455% {
+      transform: translate(26px, 26px);
+    }
+
+    63.6363636364% {
+      transform: translate(26px, 26px);
+    }
+
+    72.7272727273% {
+      transform: translate(26px, 0px);
+    }
+
+    81.8181818182% {
+      transform: translate(0px, 0px);
+    }
+
+    90.9090909091% {
+      transform: translate(-26px, 0px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .banter-loader__box:nth-child(1) {
+    animation: moveBox-1 4s infinite;
+  }
+
+  @keyframes moveBox-2 {
+    9.0909090909% {
+      transform: translate(0, 0);
+    }
+
+    18.1818181818% {
+      transform: translate(26px, 0);
+    }
+
+    27.2727272727% {
+      transform: translate(0px, 0);
+    }
+
+    36.3636363636% {
+      transform: translate(26px, 0);
+    }
+
+    45.4545454545% {
+      transform: translate(26px, 26px);
+    }
+
+    54.5454545455% {
+      transform: translate(26px, 26px);
+    }
+
+    63.6363636364% {
+      transform: translate(26px, 26px);
+    }
+
+    72.7272727273% {
+      transform: translate(26px, 26px);
+    }
+
+    81.8181818182% {
+      transform: translate(0px, 26px);
+    }
+
+    90.9090909091% {
+      transform: translate(0px, 26px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .banter-loader__box:nth-child(2) {
+    animation: moveBox-2 4s infinite;
+  }
+
+  @keyframes moveBox-3 {
+    9.0909090909% {
+      transform: translate(-26px, 0);
+    }
+
+    18.1818181818% {
+      transform: translate(-26px, 0);
+    }
+
+    27.2727272727% {
+      transform: translate(0px, 0);
+    }
+
+    36.3636363636% {
+      transform: translate(-26px, 0);
+    }
+
+    45.4545454545% {
+      transform: translate(-26px, 0);
+    }
+
+    54.5454545455% {
+      transform: translate(-26px, 0);
+    }
+
+    63.6363636364% {
+      transform: translate(-26px, 0);
+    }
+
+    72.7272727273% {
+      transform: translate(-26px, 0);
+    }
+
+    81.8181818182% {
+      transform: translate(-26px, -26px);
+    }
+
+    90.9090909091% {
+      transform: translate(0px, -26px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .banter-loader__box:nth-child(3) {
+    animation: moveBox-3 4s infinite;
+  }
+
+  @keyframes moveBox-4 {
+    9.0909090909% {
+      transform: translate(-26px, 0);
+    }
+
+    18.1818181818% {
+      transform: translate(-26px, 0);
+    }
+
+    27.2727272727% {
+      transform: translate(-26px, -26px);
+    }
+
+    36.3636363636% {
+      transform: translate(0px, -26px);
+    }
+
+    45.4545454545% {
+      transform: translate(0px, 0px);
+    }
+
+    54.5454545455% {
+      transform: translate(0px, -26px);
+    }
+
+    63.6363636364% {
+      transform: translate(0px, -26px);
+    }
+
+    72.7272727273% {
+      transform: translate(0px, -26px);
+    }
+
+    81.8181818182% {
+      transform: translate(-26px, -26px);
+    }
+
+    90.9090909091% {
+      transform: translate(-26px, 0px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .banter-loader__box:nth-child(4) {
+    animation: moveBox-4 4s infinite;
+  }
+
+  @keyframes moveBox-5 {
+    9.0909090909% {
+      transform: translate(0, 0);
+    }
+
+    18.1818181818% {
+      transform: translate(0, 0);
+    }
+
+    27.2727272727% {
+      transform: translate(0, 0);
+    }
+
+    36.3636363636% {
+      transform: translate(26px, 0);
+    }
+
+    45.4545454545% {
+      transform: translate(26px, 0);
+    }
+
+    54.5454545455% {
+      transform: translate(26px, 0);
+    }
+
+    63.6363636364% {
+      transform: translate(26px, 0);
+    }
+
+    72.7272727273% {
+      transform: translate(26px, 0);
+    }
+
+    81.8181818182% {
+      transform: translate(26px, -26px);
+    }
+
+    90.9090909091% {
+      transform: translate(0px, -26px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .banter-loader__box:nth-child(5) {
+    animation: moveBox-5 4s infinite;
+  }
+
+  @keyframes moveBox-6 {
+    9.0909090909% {
+      transform: translate(0, 0);
+    }
+
+    18.1818181818% {
+      transform: translate(-26px, 0);
+    }
+
+    27.2727272727% {
+      transform: translate(-26px, 0);
+    }
+
+    36.3636363636% {
+      transform: translate(0px, 0);
+    }
+
+    45.4545454545% {
+      transform: translate(0px, 0);
+    }
+
+    54.5454545455% {
+      transform: translate(0px, 0);
+    }
+
+    63.6363636364% {
+      transform: translate(0px, 0);
+    }
+
+    72.7272727273% {
+      transform: translate(0px, 26px);
+    }
+
+    81.8181818182% {
+      transform: translate(-26px, 26px);
+    }
+
+    90.9090909091% {
+      transform: translate(-26px, 0px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .banter-loader__box:nth-child(6) {
+    animation: moveBox-6 4s infinite;
+  }
+
+  @keyframes moveBox-7 {
+    9.0909090909% {
+      transform: translate(26px, 0);
+    }
+
+    18.1818181818% {
+      transform: translate(26px, 0);
+    }
+
+    27.2727272727% {
+      transform: translate(26px, 0);
+    }
+
+    36.3636363636% {
+      transform: translate(0px, 0);
+    }
+
+    45.4545454545% {
+      transform: translate(0px, -26px);
+    }
+
+    54.5454545455% {
+      transform: translate(26px, -26px);
+    }
+
+    63.6363636364% {
+      transform: translate(0px, -26px);
+    }
+
+    72.7272727273% {
+      transform: translate(0px, -26px);
+    }
+
+    81.8181818182% {
+      transform: translate(0px, 0px);
+    }
+
+    90.9090909091% {
+      transform: translate(26px, 0px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .banter-loader__box:nth-child(7) {
+    animation: moveBox-7 4s infinite;
+  }
+
+  @keyframes moveBox-8 {
+    9.0909090909% {
+      transform: translate(0, 0);
+    }
+
+    18.1818181818% {
+      transform: translate(-26px, 0);
+    }
+
+    27.2727272727% {
+      transform: translate(-26px, -26px);
+    }
+
+    36.3636363636% {
+      transform: translate(0px, -26px);
+    }
+
+    45.4545454545% {
+      transform: translate(0px, -26px);
+    }
+
+    54.5454545455% {
+      transform: translate(0px, -26px);
+    }
+
+    63.6363636364% {
+      transform: translate(0px, -26px);
+    }
+
+    72.7272727273% {
+      transform: translate(0px, -26px);
+    }
+
+    81.8181818182% {
+      transform: translate(26px, -26px);
+    }
+
+    90.9090909091% {
+      transform: translate(26px, 0px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  .banter-loader__box:nth-child(8) {
+    animation: moveBox-8 4s infinite;
+  }
+
+  @keyframes moveBox-9 {
+    9.0909090909% {
+      transform: translate(-26px, 0);
+    }
+
+    18.1818181818% {
+      transform: translate(-26px, 0);
+    }
+
+    27.2727272727% {
+      transform: translate(0px, 0);
+    }
+
+    36.3636363636% {
+      transform: translate(-26px, 0);
+    }
+
+    45.4545454545% {
+      transform: translate(0px, 0);
+    }
+
+    54.5454545455% {
+      transform: translate(0px, 0);
+    }
+
+    63.6363636364% {
+      transform: translate(-26px, 0);
+    }
+
+    72.7272727273% {
+      transform: translate(-26px, 0);
+    }
+
+    81.8181818182% {
+      transform: translate(-52px, 0);
+    }
+
+    90.9090909091% {
+      transform: translate(-26px, 0);
+    }
+
+    100% {
+      transform: translate(0px, 0);
+    }
+  }
+
+  .banter-loader__box:nth-child(9) {
+    animation: moveBox-9 4s infinite;
+  }`;
+
+export default Loader;

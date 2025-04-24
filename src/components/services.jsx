@@ -25,7 +25,9 @@ export default function Services() {
                   </div>
                 ))}
               </div>
-              <button className="bg-gray-900 w-50 text-white p-4 rounded-2xl" onClick={()=>{setWork(true)}}>
+              <button className="text-black bg-yellow-300 border-2 border-black rounded-lg px-4 py-2 font-bold shadow-[5px_5px_0px_#000]
+                                  transition-all duration-300 hover:bg-white hover:border-black hover:shadow-[5px_5px_0px_#000]
+                                active:bg-white active:shadow-none active:translate-y-1 w-fit flex mx-auto" onClick={()=>{setWork(true)}}>
                L'ets Work
               </button>
             </section>

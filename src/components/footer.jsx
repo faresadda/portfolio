@@ -13,6 +13,7 @@ import { FaSquareUpwork } from "react-icons/fa6";
 import { Blurcontext } from "../main";
 import emailjs from "emailjs-com";
 import comment from "../../public/comment.png"
+import { TbSend2 } from "react-icons/tb";
 
 export default function Footer({ home,about,skills,services,projects,contact }) {
   const { work, setWork, pageexist, setPageexist } = useContext(Blurcontext);
@@ -90,9 +91,11 @@ export default function Footer({ home,about,skills,services,projects,contact }) 
           />
           <button
             type="submit"
-            className="bg-yellow-300 text-gray-800 px-6 py-2 rounded-tr-2xl rounded-bl-2xl hover:bg-yellow-400 transition h-15 w-full"
+            className="text-black bg-yellow-300 border-2 border-black rounded-tr-2xl rounded-bl-2xl px-10 py-2 font-bold shadow-[5px_5px_0px_#000]
+            transition-all duration-300 hover:bg-white hover:border-black hover:shadow-[5px_5px_0px_#000]
+             active:bg-white active:shadow-none active:translate-y-1 w-full flex items-center justify-center gap-4"
           >
-            Send
+            Send <TbSend2 className="text-2xl"/>
           </button>
         </form>
       </div>
