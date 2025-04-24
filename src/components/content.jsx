@@ -147,7 +147,7 @@ export default function Content({
                  active:bg-white active:shadow-none active:translate-y-1 w-fit">
               More
             </Link>
-            <a href="../../public/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center font-bold text-[1rem]">
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center font-bold text-[1rem]">
               View CV <BsFileEarmarkPdf className="text-xl"/>
             </a>
           </div>
