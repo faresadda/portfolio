@@ -28,7 +28,7 @@ export default function App() {
         description: "A personal portfolio built with React and Tailwind CSS.",
         details: "This project showcases a developer's skills, projects, and contact information with a sleek and modern UI design. It includes sections for about, skills, portfolio, and contact, providing a professional online presence.",
         icon: <FaGlobe className="text-blue-500 text-4xl" />, 
-        src:"../public/portfolio.png",
+        src:"/portfolio.png",
         tools:[<SiReact color="#61DAFB" />,<SiTailwindcss color="#38B2AC" />],
         link: "#",
         github:"https://github.com/faresadda/portfolio/tree/master"
@@ -39,7 +39,7 @@ export default function App() {
         description: "A fully functional e-commerce application with a modern UI.",
         details: "This application provides a seamless online shopping experience, featuring product listings, a shopping cart, checkout functionality, and payment gateway integration. Built with React, it offers a fast and user-friendly experience.",
         icon: <FaShoppingCart className="text-green-500 text-4xl" />, 
-        src:"../public/ushop.PNG",
+        src:"/ushop.PNG",
         tools:[<SiReact color="#61DAFB" />,<SiTailwindcss color="#38B2AC" />],
         link: "https://ushopstore.netlify.app/",
         github:"https://github.com/faresadda/ushop/tree/master"
@@ -50,7 +50,7 @@ export default function App() {
         description: "A chat bot built with API",
         details: "This chatbot is built with AI capabilities to assist users in real-time conversations. It includes NLP processing, user-friendly chat interfaces, and API integration for enhanced responsiveness and contextual awareness.",
         icon: <FaComments className="text-purple-500 text-4xl" />, 
-        src:"../public/chatfai.PNG",
+        src:"/chatfai.PNG",
         tools:[<SiReact color="#61DAFB" />,<SiTailwindcss color="#38B2AC" />,<SiNodedotjs color="#339933" />,<SiMongodb color="#47A248" />],
         link: "https://chatfai.onrender.com/",
         github:"https://github.com/faresadda/chatfai/tree/master"
