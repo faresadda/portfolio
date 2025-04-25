@@ -13,7 +13,7 @@ import { FaSquareUpwork } from "react-icons/fa6";
 import { Blurcontext } from "../main";
 import emailjs from "emailjs-com";
 import comment from "../../public/comment.png"
-import { TbSend2 } from "react-icons/tb";
+import { IoSend } from "react-icons/io5";
 
 export default function Footer({ home,about,skills,services,projects,contact }) {
   const { work, setWork, pageexist, setPageexist } = useContext(Blurcontext);
@@ -70,7 +70,7 @@ export default function Footer({ home,about,skills,services,projects,contact }) 
           <input
             type="text"
             placeholder="Enter your name"
-            className="p-4 rounded-tr-2xl rounded-bl-2xl outline-none h-15 w-full bg-gray-800"
+            className="p-4 rounded-tr-2xl rounded-bl-2xl outline-none w-full bg-gray-800"
             required
             value={name}
             onChange={e=>{setName(e.target.value)}}
@@ -78,7 +78,7 @@ export default function Footer({ home,about,skills,services,projects,contact }) 
           <input
             type="email"
             placeholder="Enter your email"
-            className="p-4 rounded-tr-2xl rounded-bl-2xl outline-none h-15 w-full bg-gray-800"
+            className="p-4 rounded-tr-2xl rounded-bl-2xl outline-none w-full bg-gray-800"
             required
             value={email}
             onChange={e=>{setEmail(e.target.value)}}
@@ -91,11 +91,11 @@ export default function Footer({ home,about,skills,services,projects,contact }) 
           />
           <button
             type="submit"
-            className="text-black bg-yellow-300 border-2 border-black rounded-tr-2xl rounded-bl-2xl px-10 py-2 font-bold shadow-[5px_5px_0px_#000]
+            className="text-black bg-yellow-300 border-2 border-black rounded-tr-2xl rounded-bl-2xl p-4 font-bold shadow-[5px_5px_0px_#000]
             transition-all duration-300 hover:bg-white hover:border-black hover:shadow-[5px_5px_0px_#000]
              active:bg-white active:shadow-none active:translate-y-1 w-full flex items-center justify-center gap-4"
           >
-            Send <TbSend2 className="text-2xl"/>
+            Send <IoSend className="text-2xl"/>
           </button>
         </form>
       </div>

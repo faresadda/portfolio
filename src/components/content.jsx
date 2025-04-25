@@ -74,7 +74,7 @@ export default function Content({
     <div className={`bg-gray-50 ${(work || pageexist !== null) && "blur-xs"}`}>
       {/* Home */}
       <section
-        className="bg-gray-900 text-white shadow-2xl h-screen pt-30 flex justify-around items-center px-10 max-[340px]:px-0 flex-wrap gap-10"
+        className="bg-gray-900 text-white shadow-2xl h-screen pt-30 flex justify-around items-center px-10 max-[340px]:px-0 flex-wrap gap-8"
         ref={home}>
         <div className="name">
           <img src={name} className="max-w-80" loading="lazy" />
@@ -147,7 +147,9 @@ export default function Content({
                  active:bg-white active:shadow-none active:translate-y-1 w-fit">
               More
             </Link>
-            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center font-bold text-[1rem]">
+            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center text-black bg-white border-2 border-black 
+            rounded-lg px-10 py-2 font-bold shadow-[5px_5px_0px_#000] transition-all duration-300 hover:bg-yellow-300 hover:border-black hover:shadow-[5px_5px_0px_#000]
+            active:bg-yellow-300 active:shadow-none active:translate-y-1 w-fit">
               View CV <BsFileEarmarkPdf className="text-xl"/>
             </a>
           </div>
@@ -257,9 +259,9 @@ export default function Content({
             More
           </Link>
           <button
-            className="text-black bg-yellow-300 border-2 border-black rounded-lg px-10 py-2 font-bold shadow-[5px_5px_0px_#000]
-            transition-all duration-300 hover:bg-white hover:border-black hover:shadow-[5px_5px_0px_#000]
-             active:bg-white active:shadow-none active:translate-y-1 w-fit "
+            className="text-black bg-white border-2 border-black rounded-lg px-10 py-2 font-bold shadow-[5px_5px_0px_#000]
+            transition-all duration-300 hover:bg-yellow-300 hover:border-black hover:shadow-[5px_5px_0px_#000]
+             active:bg-yellow-300 active:shadow-none active:translate-y-1 w-fit "
             onClick={() => {
               setWork(true);
             }}

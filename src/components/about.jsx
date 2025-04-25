@@ -7,7 +7,7 @@ const About = ({ about }) => {
   const { work, setWork, pageexist, setPageexist } = useContext(Blurcontext);
   return (
     <section
-      className={`bg-gray-50 p-20 relative min-h-screen flex flex-col justify-center pt-50 max-[850px]:px-8 ${
+      className={`bg-gray-50 p-20 relative min-h-screen flex flex-col justify-center pt-30 max-[850px]:px-8 ${
         (work || pageexist !== null) && "blur-xs"
       }`}
       ref={about}
@@ -86,7 +86,9 @@ const About = ({ about }) => {
           solutions with impactful visual storytelling.
         </p>
       </div>
-      <a href="../../public/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center justify-center font-bold text-[1rem] mt-10 z-10">
+      <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex gap-2 items-center text-black bg-white border-2 border-black 
+            rounded-lg px-10 py-2 font-bold shadow-[5px_5px_0px_#000] transition-all duration-300 hover:bg-yellow-300 hover:border-black hover:shadow-[5px_5px_0px_#000]
+            active:bg-yellow-300 active:shadow-none active:translate-y-1 w-fit mx-auto mt-10 z-10">
                     View CV <BsFileEarmarkPdf className="text-xl"/>
                   </a>
       <div className="about bg-yellow-300 absolute bottom-0 right-0 w-full h-full z-0"></div>

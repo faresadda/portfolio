@@ -49,9 +49,10 @@ body{
     position: absolute;
     background-color: #f3f4f6;
     top: 0;
-    padding: 50px;
+    padding: 150px 0 0 2.5rem;
     height:100vh;
-    justify-content: center;
+    justify-content: start;
+    align-items: start;
     gap: 20px;
   }
   .menu{display: block;}

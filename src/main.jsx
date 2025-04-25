@@ -171,7 +171,7 @@ export default function App() {
         title: "Video Editing & Montage",
         description: "Crafting professional and engaging video content.",
         details: "We offer high-quality video editing and montage services for social media, marketing, and presentations. Our editing process includes cutting, transitions, color correction, subtitles, sound design, and motion graphics to deliver polished and impactful videos. We work with tools like Adobe Premiere Pro and After Effects to ensure cinematic quality tailored to your brand and vision.",
-        icon: <FaVideo className="text-gray-600 text-4xl" />
+        icon: <FaVideo className="text-[#A8B9CC] text-4xl" />
       }
   ];
   

@@ -6,7 +6,7 @@ export default function Services() {
   const {projectsList,skillsList,servicesList}=useContext(Context)
   const { work, setWork,pageexist,setPageexist } = useContext(Blurcontext);
   return (
-    <section className={`z-10 relative px-20 pt-50 flex flex-col justify-center min-h-screen py-20 bg-gray-50 max-[500px]:px-8 ${(work || pageexist!==null) && 'blur-xs'}`}>
+    <section className={`z-10 relative px-20 pt-30 flex flex-col justify-center min-h-screen py-20 bg-gray-50 max-[500px]:px-8 ${(work || pageexist!==null) && 'blur-xs'}`}>
               <div className="flex items-center justify-center gap-6 mb-6">
                 <h2 className="text-4xl font-extrabold text-gray-800 tracking-wide">SERVICES</h2>
                 <img src={title} className="title left-[200px]!" loading="lazy"/>
@@ -25,9 +25,9 @@ export default function Services() {
                   </div>
                 ))}
               </div>
-              <button className="text-black bg-yellow-300 border-2 border-black rounded-lg px-4 py-2 font-bold shadow-[5px_5px_0px_#000]
-                                  transition-all duration-300 hover:bg-white hover:border-black hover:shadow-[5px_5px_0px_#000]
-                                active:bg-white active:shadow-none active:translate-y-1 w-fit flex mx-auto" onClick={()=>{setWork(true)}}>
+              <button className="text-black bg-white border-2 border-black rounded-lg px-10 py-2 font-bold shadow-[5px_5px_0px_#000]
+                                  transition-all duration-300 hover:bg-yellow-300 hover:border-black hover:shadow-[5px_5px_0px_#000]
+                                active:bg-yellow-300 active:shadow-none active:translate-y-1 w-fit flex mx-auto mt-10" onClick={()=>{setWork(true)}}>
                L'ets Work
               </button>
             </section>

@@ -8,7 +8,7 @@ export default function Skills() {
 
   return (
     <section
-      className={`bg-gray-50 p-20 pt-50  flex flex-col justify-center min-h-screen max-[500px]:px-8 ${(work || pageexist!==null) && "blur-xs"}`}>
+      className={`bg-gray-50 p-20 pt-30  flex flex-col justify-center min-h-screen max-[500px]:px-8 ${(work || pageexist!==null) && "blur-xs"}`}>
       <div className="flex items-center justify-center gap-6 mb-16">
         <h2 className="text-4xl font-extrabold text-gray-800 tracking-wide">
           SKILLS

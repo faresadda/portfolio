@@ -114,7 +114,7 @@ export default function Navbar({ projects, contact, dispatch, list }) {
             }}
           />
         )}
-        {menu && <img src={blacklogo} className="absolute top-8 left-8 w-15" />}
+        {menu && <img src={blacklogo} className="absolute top-8 left-10 w-15" />}
       </ul>
       <div className="flex items-center gap-10">
         <button
