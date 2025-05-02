@@ -28,7 +28,7 @@ export default function Services() {
               <button className="text-black bg-white border-2 border-black rounded-lg px-10 py-2 font-bold shadow-[5px_5px_0px_#000]
                                   transition-all duration-300 hover:bg-yellow-300 hover:border-black hover:shadow-[5px_5px_0px_#000]
                                 active:bg-yellow-300 active:shadow-none active:translate-y-1 w-fit flex mx-auto mt-10" onClick={()=>{setWork(true)}}>
-               L'ets Work
+               Let's Work
               </button>
             </section>
   );

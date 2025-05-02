@@ -266,7 +266,7 @@ export default function Content({
               setWork(true);
             }}
           >
-            L'ets work
+            Let's work
           </button>
         </div>
         <img
