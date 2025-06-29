@@ -1,0 +1,16 @@
+# Email Configuration
+# انسخ هذا الملف إلى .env.local واملأ القيم الصحيحة
+
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=465
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASSWORD=your-app-password
+ADMIN_EMAIL=faresaddadev@gmail.com
+
+# ملاحظات مهمة:
+# 1. استخدم كلمة مرور التطبيق وليس كلمة مرور Gmail العادية
+# 2. لإنشاء كلمة مرور التطبيق:
+#    - اذهب إلى إعدادات Google Account
+#    - Security > 2-Step Verification > App passwords
+#    - أنشئ كلمة مرور جديدة للتطبيق
+# 3. تأكد من تفعيل "Less secure app access" أو استخدام OAuth2 
