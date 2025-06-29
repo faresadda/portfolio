@@ -30,10 +30,11 @@ export const metadata = {
     siteName: "Fares Adda Portfolio",
     images: [
       {
-        url: "/logo.png",
+        url: "/icon.png",
         width: 1200,
         height: 630,
         alt: "Fares Adda Portfolio",
+        background: 'black'
       },
     ],
     locale: "en_US",
