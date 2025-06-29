@@ -120,7 +120,7 @@ export default function Services() {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-white">
               MY SERVICES
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -136,7 +136,7 @@ export default function Services() {
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
-                }`}
+                } border border-white/20`}
                 style={{ transitionDelay: `${(idx + 2) * 200}ms` }}
               >
                 <div className="flex items-center justify-center gap-3 mb-4">

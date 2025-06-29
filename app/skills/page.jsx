@@ -219,7 +219,7 @@ export default function Skills() {
 
   return (
     <div className={`${work ? 'blur-xs' : 'blur-none'} min-h-screen w-full bg-black mt-10`}>
-      <section ref={sectionRef} className="relative py-20 px-8">
+      <section ref={sectionRef} className="relative py-20 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
           <div
@@ -230,7 +230,7 @@ export default function Skills() {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            <h1 className="text-6xl font-bold mb-6 text-white">MY SKILLS</h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white">MY SKILLS</h1>
             
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               A comprehensive collection of technical skills and expertise
@@ -248,7 +248,7 @@ export default function Skills() {
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
-                } group`}
+                } group border border-white/20`}
                 style={{
                   transitionDelay: `${(categoryIndex + 2) * 200}ms`,
                 }}

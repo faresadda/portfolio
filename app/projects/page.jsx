@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
   FaGlobe,
@@ -69,7 +69,7 @@ export default function Projects() {
           <SiMongodb color="#47A248" /> MongoDB
         </div>,
       ],
-      link: "https://chatfai.onrender.com/",
+      link: "https://chatfai.netlify.app/",
       github: "https://github.com/faresadda/chatfai",
     },
     {
@@ -143,7 +143,7 @@ export default function Projects() {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-white">MY PROJECTS</h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-white">MY PROJECTS</h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Here are some of the projects I have worked on, showcasing my
               skills in web development and UI/UX design.
@@ -157,7 +157,7 @@ export default function Projects() {
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
-                }`}
+                } border border-white/20`}
                 style={{ transitionDelay: `${(idx + 2) * 200}ms` }}
               >
                 <h2 className="text-2xl font-bold text-gray-200  mb-5">

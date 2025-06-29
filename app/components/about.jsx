@@ -241,11 +241,11 @@ export default function About() {
       <div className="w-full flex flex-col md:flex-row gap-5">
         {/* Information */}
         <div
-          className={`flex-1 w-full bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg p-4 md:p-6 lg:p-8 mb-8 flex flex-col items-center z-10 transition-all duration-700 transform ${
+          className={`flex-1 w-full bg-white/5 backdrop-blur-3xl rounded-2xl shadow-[8px_8px_0px_#fff]/20 p-4 md:p-6 lg:p-8 mb-8 flex flex-col items-center z-10 transition-all duration-700 transform ${
             visibleSections.information
               ? "translate-y-0 opacity-100"
               : "translate-y-10 opacity-0"
-          } border border-white/10`}
+          } border border-white/20`}
         >
           <h3 className="mb-4 text-lg md:text-xl lg:text-2xl font-bold text-yellow-300 drop-shadow flex items-center gap-3">
             <PiUserListFill className="text-xl md:text-2xl lg:text-3xl" />{" "}
@@ -254,37 +254,37 @@ export default function About() {
 
           <div className="w-full space-y-3">
             <div
-              className={`flex flex-col sm:flex-row sm:items-start sm:justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
+              className={`flex items-start justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
                 visibleItems.informationItems.includes("name")
                   ? "translate-x-0 opacity-100"
                   : "translate-x-10 opacity-0"
               }`}
             >
-              <span className="text-gray-300 font-medium text-xs md:text-sm lg:text-base flex-shrink-0 mb-2 sm:mb-0">
+              <span className="text-gray-300 font-medium text-xs md:text-sm lg:text-base flex-shrink-0 ">
                 Name:
               </span>
-              <span className="text-white font-semibold text-xs md:text-sm lg:text-base text-right sm:text-left break-words">
+              <span className="text-white font-semibold text-xs md:text-sm lg:text-base break-words">
                 Fares Adda
               </span>
             </div>
 
             <div
-              className={`flex flex-col sm:flex-row sm:items-start sm:justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
+              className={`flex items-start justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
                 visibleItems.informationItems.includes("age")
                   ? "translate-x-0 opacity-100"
                   : "translate-x-10 opacity-0"
               }`}
             >
-              <span className="text-gray-300 font-medium text-xs md:text-sm lg:text-base flex-shrink-0 mb-2 sm:mb-0">
+              <span className="text-gray-300 font-medium text-xs md:text-sm lg:text-base flex-shrink-0 ">
                 Age:
               </span>
-              <span className="text-white font-semibold text-xs md:text-sm lg:text-base text-right sm:text-left break-words">
+              <span className="text-white font-semibold text-xs md:text-sm lg:text-base break-words">
                 {new Date().getFullYear() - 2001} years
               </span>
             </div>
 
             <div
-              className={`flex flex-col sm:flex-row sm:items-start sm:justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
+              className={`flex items-start justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
                 visibleItems.informationItems.includes("location")
                   ? "translate-x-0 opacity-100"
                   : "translate-x-10 opacity-0"
@@ -293,13 +293,13 @@ export default function About() {
               <span className="text-gray-300 font-medium text-xs md:text-sm lg:text-base flex-shrink-0 mb-2 sm:mb-0">
                 Location:
               </span>
-              <span className="text-white font-semibold text-xs md:text-sm lg:text-base text-right sm:text-left break-words">
+              <span className="text-white font-semibold text-xs md:text-sm lg:text-base break-words">
                 Boumerdes, Algeria
               </span>
             </div>
 
             <div
-              className={`flex flex-col sm:flex-row sm:items-start sm:justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
+              className={`flex justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
                 visibleItems.informationItems.includes("experience")
                   ? "translate-x-0 opacity-100"
                   : "translate-x-10 opacity-0"
@@ -308,8 +308,8 @@ export default function About() {
               <span className="text-gray-300 font-medium text-xs md:text-sm lg:text-base flex-shrink-0 mb-2 sm:mb-0">
                 Experience:
               </span>
-              <span className="text-white font-semibold text-xs md:text-sm lg:text-base text-right sm:text-left break-words">
-                {new Date().getFullYear() - 2021}+ Years
+              <span className="text-white font-semibold text-xs md:text-sm lg:text-base break-words">
+                +{new Date().getFullYear() - 2024} Years
               </span>
             </div>
           </div>
@@ -317,11 +317,12 @@ export default function About() {
 
         {/* Education Section */}
         <div
-          className={`flex-1 w-full bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg p-4 md:p-6 lg:p-8 mb-8 flex flex-col items-center z-10 transition-all duration-700 transform ${
+          className={`flex-1 w-full bg-white/5 backdrop-blur-3xl rounded-2xl shadow-[8px_8px_0px_#fff]/20 
+             p-4 md:p-6 lg:p-8 mb-8 flex flex-col items-center z-10 transition-all duration-700 transform ${
             visibleSections.education
               ? "translate-y-0 opacity-100"
               : "translate-y-10 opacity-0"
-          } border border-white/10`}
+          } border border-white/20`}
         >
           <h3 className="mb-4 text-lg md:text-xl lg:text-2xl font-bold text-yellow-300 drop-shadow flex items-center gap-3">
             <FaGraduationCap className="text-xl md:text-2xl lg:text-3xl" />{" "}
@@ -330,7 +331,7 @@ export default function About() {
 
           <div className="w-full space-y-3">
             <div
-              className={`flex flex-col sm:flex-row sm:items-start gap-5 sm:justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
+              className={`flex items-start gap-5 justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
                 visibleItems.educationItems.includes("degree")
                   ? "translate-x-0 opacity-100"
                   : "translate-x-10 opacity-0"
@@ -339,28 +340,28 @@ export default function About() {
               <span className="text-gray-300 font-medium text-xs md:text-sm lg:text-base flex-shrink-0 mb-2 sm:mb-0">
                 Degree:
               </span>
-              <span className="text-white font-semibold text-xs md:text-sm lg:text-base text-right sm:text-left break-words">
+              <span className="text-white font-semibold text-xs md:text-sm lg:text-base break-words text-right">
                 Bachelor's in Automation and Control Engineering
               </span>
             </div>
 
             <div
-              className={`flex flex-col sm:flex-row sm:items-start sm:justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
+              className={`flex justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
                 visibleItems.educationItems.includes("university")
                   ? "translate-x-0 opacity-100"
                   : "translate-x-10 opacity-0"
               }`}
             >
-              <span className="text-gray-300 font-medium text-xs md:text-sm lg:text-base flex-shrink-0 mb-2 sm:mb-0">
+              <span className="text-gray-300 font-medium text-xs md:text-sm lg:text-base flex-shrink-0">
                 University:
               </span>
-              <span className="text-white font-semibold text-xs md:text-sm lg:text-base text-right sm:text-left break-words">
+              <span className="text-white font-semibold text-xs md:text-sm lg:text-base break-words">
                 ESSA - ENSTA University
               </span>
             </div>
 
             <div
-              className={`flex flex-col sm:flex-row sm:items-center sm:justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
+              className={`flex justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
                 visibleItems.educationItems.includes("duration")
                   ? "translate-x-0 opacity-100"
                   : "translate-x-10 opacity-0"
@@ -375,7 +376,7 @@ export default function About() {
             </div>
 
             <div
-              className={`flex flex-col sm:flex-row sm:items-center sm:justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
+              className={`flex justify-between bg-white/5 rounded-lg p-3 border border-white/10 transition-all duration-500 transform ${
                 visibleItems.educationItems.includes("field")
                   ? "translate-x-0 opacity-100"
                   : "translate-x-10 opacity-0"
@@ -434,27 +435,27 @@ export default function About() {
 
       {/* Main Text */}
       <div
-        className={`w-full text-center z-10 transition-all duration-700 transform ${
+        className={`w-full text-center z-10 transition-all duration-700 transform text-xs ${
           visibleSections.mainText
             ? "translate-y-0 opacity-100"
             : "translate-y-10 opacity-0"
         }`}
       >
-        <p className="text-base md:text-lg lg:text-xl text-white mb-4 md:mb-6 font-medium px-4">
+        <p className="text-base md:text-lg lg:text-xl text-white mb-4 md:mb-6">
           I'm a dedicated Full-Stack Developer with expertise in React JS,
           Tailwind CSS, and JavaScript on the front end, and Node.js,
           Express.js, and MongoDB on the back end. I specialize in building
           responsive, high-performance web applications that deliver seamless
           user experiences.
         </p>
-        <p className="text-base md:text-lg lg:text-xl text-white mb-4 md:mb-6 px-4">
+        <p className="text-base md:text-lg lg:text-xl text-white mb-4 md:mb-6">
           With a background in Automation and Control Systems, I bring strong
           analytical and problem-solving skills to my development process. This
           technical foundation enables me to integrate smart automation,
           optimize functionality, and develop efficient solutions across the
           full stack.
         </p>
-        <p className="text-base md:text-lg lg:text-xl text-white leading-relaxed mb-6 md:mb-8 px-4">
+        <p className="text-base md:text-lg lg:text-xl text-white leading-relaxed mb-6 md:mb-8">
           I strive to write clean, maintainable, and scalable code, ensuring
           both the frontend and backend are well-structured and easy to expand.
           From dynamic user interfaces to robust APIs and secure database
@@ -464,7 +465,7 @@ export default function About() {
       </div>
 
       <div
-        className={`flex flex-col gap-4 md:gap-8 sm:flex-row transition-all duration-700 transform ${
+        className={`flex flex-col gap-8 sm:flex-row transition-all duration-700 transform ${
           visibleSections.buttons
             ? "translate-y-0 opacity-100"
             : "translate-y-10 opacity-0"

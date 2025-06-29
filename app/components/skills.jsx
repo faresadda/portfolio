@@ -260,7 +260,7 @@ export default function Skills() {
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-10 opacity-0"
-                } group`}
+                } group border border-white/20`}
                 style={{
                   transitionDelay: `${(categoryIndex + 2) * 200}ms`,
                 }}
