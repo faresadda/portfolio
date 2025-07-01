@@ -107,7 +107,7 @@ export default function Projects() {
         </div>,
       ],
       link: "https://www.jjtrading.site/",
-      github: "https://github.com/faresadda/tradingplatform/tree/master",
+      github: "https://github.com/faresadda/tradingplatform",
     },
   ];
 
