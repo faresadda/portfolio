@@ -16,7 +16,7 @@ import { IoSend } from "react-icons/io5";
 import { useDataContext } from "../context/dataContext";
 import { TbLoader } from "react-icons/tb";
 import { LuSendHorizontal } from "react-icons/lu";
-import {sendEmail} from '../functions/email'
+import { sendEmail } from "../functions/email";
 
 export default function Footer() {
   const [name, setName] = useState("");
@@ -25,18 +25,17 @@ export default function Footer() {
   const { dispatch, setWork } = useDataContext();
   const [loading, setLoading] = useState(false);
 
-
-  const {work} = useDataContext()
+  const { work } = useDataContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const formData = {
       name: name,
       email: email,
-      message: message
+      message: message,
     };
-  
+
     setLoading(true);
     await sendEmail(formData);
     setLoading(false);
@@ -46,7 +45,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className={`${work ? 'blur-xs' : 'blur-none'} px-6 sm:px-16`}>
+    <footer className={`${work ? "blur-xs" : "blur-none"} px-6 sm:px-16`}>
       <section className=" border-t border-gray-600 py-10">
         {/* comment */}
         <div className="flex flex-col justify-center gap-10">

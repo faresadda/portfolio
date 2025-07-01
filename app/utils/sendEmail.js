@@ -31,7 +31,7 @@ class EmailService {
       }
 
       const mailOptions = {
-        from: process.env.EMAIL_USER,
+        from: `Fares Adda <${process.env.EMAIL_USER}>`,
         to: to,
         subject: subject,
         html: html,
@@ -61,6 +61,7 @@ class EmailService {
         <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 30px; text-align: center;">
+            <img src="https://faresadda.vercel.app/logo.png" alt="Fares Adda Logo" style="width: 80px; margin-bottom: 20px; border-radius: 10px;">
             <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 300;">Thank You!</h1>
             <p style="color: #ffffff; margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">We've received your message</p>
           </div>
@@ -92,18 +93,59 @@ class EmailService {
             
             <p style="color: #666666; line-height: 1.6; margin: 0; font-size: 16px;">
               Best regards,<br>
-              <strong>The Development Team</strong>
+              <strong>Fares Adda</strong><br>
+              Full Stack Developer & Tech Consultant
             </p>
           </div>
           
+          <!-- Contact Info -->
+          <div style="padding: 40px 30px; text-align:left; max-width:420px; margin-left:auto; margin-right:auto; font-size:15px; color:#222;">
+            <h3 style="margin:0 0 18px 0; font-size:18px; font-weight:600;">Get in Touch</h3>
+            <p style="margin:0 0 2px 0;">
+              <span style="font-size:16px; vertical-align:middle;">📍</span>
+              <span style="font-weight:700; color:#222; vertical-align:middle;"> Location</span>
+            </p>
+            <p style="margin:0 0 8px 28px;">
+              <a href="https://maps.app.goo.gl/yrrucr9uNBRrrTzMA" style="color:#2563eb; text-decoration:underline;">Boumerdes, Algeria</a>
+            </p>
+            <p style="margin:0 0 2px 0;">
+              <span style="font-size:16px; vertical-align:middle;">📞</span>
+              <span style="font-weight:700; color:#222; vertical-align:middle;"> Phone</span>
+            </p>
+            <p style="margin:0 0 8px 28px;">
+              <a href="tel:+213560869608" style="color:#2563eb; text-decoration:underline;">(+213) 560-869-608</a>
+            </p>
+            <p style="margin:0 0 2px 0;">
+              <span style="font-size:16px; vertical-align:middle;">✉️</span>
+              <span style="font-weight:700; color:#222; vertical-align:middle;"> Email</span>
+            </p>
+            <p style="margin:0 0 8px 28px;">
+              <a href="mailto:faresadda2001@gmail.com" style="color:#2563eb; text-decoration:underline;">faresadda2001@gmail.com</a>
+            </p>
+            <p style="margin:0 0 2px 0;">
+              <span style="font-size:16px; vertical-align:middle;">🌐</span>
+              <span style="font-weight:700; color:#222; vertical-align:middle;"> Social Media</span>
+            </p>
+            <p style="margin:0 0 2px 28px;">
+              <a href="https://linkedin.com/in/faresadda" style="color:#2563eb; text-decoration:underline;">LinkedIn</a>
+              &nbsp; &bull; &nbsp;
+              <a href="https://github.com/faresadda" style="color:#2563eb; text-decoration:underline;">GitHub</a>
+            </p>
+            <p style="margin:0 0 2px 28px;">
+              <a href="https://upwork.com/freelancers/~01eb480f5c441bf58d" style="color:#2563eb; text-decoration:underline;">Upwork</a>
+              &nbsp; &bull; &nbsp;
+              <a href="https://facebook.com/profile.php?id=61571967693139" style="color:#2563eb; text-decoration:underline;">Facebook</a>
+            </p>
+            <p style="margin:0 0 0 28px;">
+              <a href="https://instagram.com/faresaddadev" style="color:#2563eb; text-decoration:underline;">Instagram</a>
+              &nbsp; &bull; &nbsp;
+              <a href="https://tiktok.com/@faresaddadev" style="color:#2563eb; text-decoration:underline;">TikTok</a>
+            </p>
+          </div>
           <!-- Footer -->
-          <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #e9ecef;">
-            <p style="color: #999999; margin: 0; font-size: 14px;">
-              This is an automated message. Please do not reply to this email.
-            </p>
-            <p style="color: #999999; margin: 10px 0 0 0; font-size: 12px;">
-              © 2024 Development Team. All rights reserved.
-            </p>
+          <div style="background: #222; color: #fff; padding: 24px 0 16px 0; text-align: center; font-size: 13px; margin-top: 0;">
+            <p style="margin: 0 0 8px 0;">This is an automated message. Please do not reply to this email.</p>
+            <p style="margin: 0;">© 2025 Fares Adda. All rights reserved.</p>
           </div>
         </div>
       </body>
@@ -127,11 +169,25 @@ What happens next?
 If you have any urgent questions, please don't hesitate to reach out to us again.
 
 Best regards,
-The Development Team
+Fares Adda
+
+---
+Connect With Me:
+Facebook: https://www.facebook.com/profile.php?id=61571967693139
+Instagram: https://www.instagram.com/faresaddadev/profilecard/?igsh=MXNuc3ZxZGhmNmIwZA==
+TikTok: https://tiktok.com/@faresaddadev
+LinkedIn: https://www.linkedin.com/in/faresadda?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+Upwork: https://www.upwork.com/freelancers/~01eb480f5c441bf58d
+Portfolio: https://faresadda.vercel.app
+
+Contact Information:
+Phone: (+213) 560-869-608
+Address: Boumerdes, Algeria
+Portfolio: https://faresadda.vercel.app
 
 ---
 This is an automated message. Please do not reply to this email.
-© 2024 Development Team. All rights reserved.
+© 2024 Fares Adda. All rights reserved.
     `;
 
     return this.sendEmail(
@@ -155,6 +211,7 @@ This is an automated message. Please do not reply to this email.
         <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); padding: 40px 30px; text-align: center;">
+            <img src="https://faresadda.vercel.app/logo.png" alt="Fares Adda Logo" style="width: 80px; margin-bottom: 20px; border-radius: 10px;">
             <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 300;">New Message</h1>
             <p style="color: #ffffff; margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Contact form submission received</p>
           </div>
@@ -215,14 +272,54 @@ This is an automated message. Please do not reply to this email.
             </p>
           </div>
           
+          <!-- Contact Info -->
+          <div style="padding: 40px 30px; text-align:left; max-width:420px; margin-left:auto; margin-right:auto; font-size:15px; color:#222;">
+            <h3 style="margin:0 0 18px 0; font-size:18px; font-weight:600;">Get in Touch</h3>
+            <p style="margin:0 0 2px 0;">
+              <span style="font-size:16px; vertical-align:middle;">📍</span>
+              <span style="font-weight:700; color:#222; vertical-align:middle;"> Location</span>
+            </p>
+            <p style="margin:0 0 8px 28px;">
+              <a href="https://maps.app.goo.gl/yrrucr9uNBRrrTzMA" style="color:#2563eb; text-decoration:underline;">Boumerdes, Algeria</a>
+            </p>
+            <p style="margin:0 0 2px 0;">
+              <span style="font-size:16px; vertical-align:middle;">📞</span>
+              <span style="font-weight:700; color:#222; vertical-align:middle;"> Phone</span>
+            </p>
+            <p style="margin:0 0 8px 28px;">
+              <a href="tel:+213560869608" style="color:#2563eb; text-decoration:underline;">(+213) 560-869-608</a>
+            </p>
+            <p style="margin:0 0 2px 0;">
+              <span style="font-size:16px; vertical-align:middle;">✉️</span>
+              <span style="font-weight:700; color:#222; vertical-align:middle;"> Email</span>
+            </p>
+            <p style="margin:0 0 8px 28px;">
+              <a href="mailto:faresadda2001@gmail.com" style="color:#2563eb; text-decoration:underline;">faresadda2001@gmail.com</a>
+            </p>
+            <p style="margin:0 0 2px 0;">
+              <span style="font-size:16px; vertical-align:middle;">🌐</span>
+              <span style="font-weight:700; color:#222; vertical-align:middle;"> Social Media</span>
+            </p>
+            <p style="margin:0 0 2px 28px;">
+              <a href="https://linkedin.com/in/faresadda" style="color:#2563eb; text-decoration:underline;">LinkedIn</a>
+              &nbsp; &bull; &nbsp;
+              <a href="https://github.com/faresadda" style="color:#2563eb; text-decoration:underline;">GitHub</a>
+            </p>
+            <p style="margin:0 0 2px 28px;">
+              <a href="https://upwork.com/freelancers/~01eb480f5c441bf58d" style="color:#2563eb; text-decoration:underline;">Upwork</a>
+              &nbsp; &bull; &nbsp;
+              <a href="https://facebook.com/profile.php?id=61571967693139" style="color:#2563eb; text-decoration:underline;">Facebook</a>
+            </p>
+            <p style="margin:0 0 0 28px;">
+              <a href="https://instagram.com/faresaddadev" style="color:#2563eb; text-decoration:underline;">Instagram</a>
+              &nbsp; &bull; &nbsp;
+              <a href="https://tiktok.com/@faresaddadev" style="color:#2563eb; text-decoration:underline;">TikTok</a>
+            </p>
+          </div>
           <!-- Footer -->
-          <div style="background-color: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #e9ecef;">
-            <p style="color: #999999; margin: 0; font-size: 14px;">
-              This is an automated notification from your website contact form.
-            </p>
-            <p style="color: #999999; margin: 10px 0 0 0; font-size: 12px;">
-              © 2024 Development Team. All rights reserved.
-            </p>
+          <div style="background: #222; color: #fff; padding: 24px 0 16px 0; text-align: center; font-size: 13px; margin-top: 0;">
+            <p style="margin: 0 0 8px 0;">This is an automated message. Please do not reply to this email.</p>
+            <p style="margin: 0;">© 2025 Fares Adda. All rights reserved.</p>
           </div>
         </div>
       </body>
@@ -250,11 +347,25 @@ ${contactData.message}
 Action Required: Please review this message and respond to the customer within 24-48 hours.
 
 Best regards,
-Website Contact System
+Fares Adda
+
+---
+Connect With Me:
+Facebook: https://www.facebook.com/profile.php?id=61571967693139
+Instagram: https://www.instagram.com/faresaddadev/profilecard/?igsh=MXNuc3ZxZGhmNmIwZA==
+TikTok: https://tiktok.com/@faresaddadev
+LinkedIn: https://www.linkedin.com/in/faresadda?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+Upwork: https://www.upwork.com/freelancers/~01eb480f5c441bf58d
+Portfolio: https://faresadda.vercel.app
+
+Contact Information:
+Phone: (+213) 560-869-608
+Address: Boumerdes, Algeria
+Portfolio: https://faresadda.vercel.app
 
 ---
 This is an automated notification from your website contact form.
-© 2024 Development Team. All rights reserved.
+© 2024 Fares Adda. All rights reserved.
     `;
 
     return this.sendEmail(

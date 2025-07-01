@@ -3,6 +3,20 @@ import { emailService } from "../../utils/sendEmail";
 export async function POST(request) {
   try {
     const { name, email, message } = await request.json();
+    if (!email || typeof email !== "string" || email.trim() === "") {
+      return Response.json(
+        { success: false, message: "Email is required." },
+        { status: 400 }
+      );
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return Response.json(
+        { success: false, message: "Please enter a valid email address." },
+        { status: 400 }
+      );
+    }
     if (
       !process.env.EMAIL_HOST ||
       !process.env.EMAIL_USER ||

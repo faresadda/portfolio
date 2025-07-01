@@ -12,12 +12,12 @@ export async function sendEmail (formData)  {
       console.log(result)
       
       if (result.success) {
-        alert('تم إرسال رسالتك بنجاح!');
+        alert('Message sent successfully');
       } else {
-        alert('خطأ: ' + result.message);
+        alert('Error: ' + result.message);
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('خطأ في إرسال الرسالة');
+      alert('Failed to send message');
     }
   };
